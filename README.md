@@ -1,1 +1,1 @@
-# java-fundementals
+# java-fundamentals
