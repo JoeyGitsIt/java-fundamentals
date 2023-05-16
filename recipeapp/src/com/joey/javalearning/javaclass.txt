@@ -1,0 +1,85 @@
+        int myInt = 1;
+        double myDouble = 2.0d;
+
+        System.out.println("Hello, World!");
+
+        // can be used with the following primitives: byte, short, int, long, char
+        // non-primitives that can be used
+        switch (value - to - test) {
+            case 'a':
+                System.out.println("yay");
+                break;
+            default:
+                System.out.println("default");
+                break;
+        }
+
+        // while loop
+        int someValue = 4;
+        int factorial = 1;
+
+        while (someValue > 1) {
+            factorial *= someValue;
+            someValue--;
+            System.out.println("factorial");
+        }
+
+        // do while loop
+        int iVal = 5;
+
+        // runs the "do" once before checking the while condition
+        do {
+            System.out.println(iVal);
+            iVal *= 2;
+        } while (iVal < 25);
+
+        // for loop
+        for (int i = 0; i < 100; i++) {
+            System.out.println("Restocking beers on the wall " + i);
+        }
+
+        // Array
+        float[] anArray = new float[3];
+
+        // declare a value at a position in an array
+        anArray[0] = 10.0f;
+        // declare an array with a specific size and values
+        int[] specificArray = { 1, 2, 3, 4, 5 };
+
+        // for-each loop
+        for (int num : specificArray) {
+            System.out.println(num);
+        }
+
+        // Methods
+        // Methods can't make changes to values outside of the methods themselves, the
+        // param passed into the function is only a copy
+        // Method exits: return and error
+
+        // Command line args
+        // 6 - CalcEngine command line args - converts cmd args to usable types
+
+        // String Class
+        // Strings are immutable
+        // If wanting to do comparison of string based on content have to do
+        // s1.equals(s2). if using ==, then 2 strings can have the same characters but
+        // be referencing different memory and be false
+        // can intern the strings and use == instead
+
+        // if you don't write a constructor it will automatically create one for you
+        // BUT if you do write one constructor you have to write them all
+
+        // {} initialization block runs the code and is a part of every constructor
+
+        // static fields are not tied to one instance of an object, but all of them
+        // static methods can only reference static fields
+        // accessed through class name
+        // static import statement - put static after import to run the method instead
+        // of having to reference the class name
+        // static initialization block - executes before types first use
+
+        // passing objects as params - uses a copy of the reference to the object.
+        // changes to the method will not persist outside the method
+        // changes to the object itself though will persist
+
+        // overloading - multiple versions of a method or constructor within a class
