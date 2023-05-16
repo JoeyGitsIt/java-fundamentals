@@ -83,3 +83,15 @@
         // changes to the object itself though will persist
 
         // overloading - multiple versions of a method or constructor within a class
+
+        // Object class - has characteristics of another class, accepting Object as a param means that any object can be passed into that function
+
+        // Wrapper class - has methods that makes things easier when working with that type. Wrapper classes only holds a reference, not like a primitive which directly stores the value
+        // Boxing converts primitive to a wrapper class
+        // Uboxing converts wrapper class to a primitive type 
+
+        // enums are cool
+        // enums values are ordered. first value is the lowest and last value is highest
+        // can do relative comparison
+        // enum types are classes
+        // enum types can have members (fields, methods, constructors)
