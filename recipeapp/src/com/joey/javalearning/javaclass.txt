@@ -95,3 +95,6 @@
         // can do relative comparison
         // enum types are classes
         // enum types can have members (fields, methods, constructors)
+
+        // RECORDS ARE AWESOME!!!
+        // created class is immutable and automatically sets getters, setters, and some common methods
