@@ -98,3 +98,25 @@
 
         // RECORDS ARE AWESOME!!!
         // created class is immutable and automatically sets getters, setters, and some common methods
+
+        //--------------------------------------------------------------------------
+        // COLLECTIONS
+        //--------------------------------------------------------------------------
+
+        // List - ordering of elements
+            // ArrayList - List implementation that has a backing array
+                // does the doubling thing when you run out of allocated space. kind of like what alex was saying with arrays in Go
+                // CPU cache friendly - this is good 
+                //
+            // LinkedList - not as good as arraylists - inferior, unless you are doing an add and then the complexity is O(1) where array list is O(N)
+        // Set/SortedSet - uniqueness as a key property
+            // HashSet/TreeSet - 
+        // Queue/Deque - implement FIFO, etc
+            // PriorityQueue - 
+            // LinkedList/ArrayDeque - 
+        // Map/SortMap - collection of pairs
+            // HashMap -  
+            // TreeMap - 
+
+        // iterators can remove stuff, unlike foreach which can't modify the collection 
+        // Collections.sort - defined by a comparator

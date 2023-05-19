@@ -1,6 +1,7 @@
 package com.joey.javalearning;
 
 public class Recipe {
+  int id;
   String recipeName;
   Ingredient[] ingredientArray;
   String[] stepsArray;
@@ -23,7 +24,7 @@ public class Recipe {
     this.recipeName = recipeName;
   }
 
-  public Ingredient[] getIngredientsArray() {
+  public Ingredient[] getIngredientArray() {
     return this.ingredientArray;
   }
 
@@ -38,4 +39,13 @@ public class Recipe {
   public void setStepsArray(String[] stepsArray) {
     this.stepsArray = stepsArray;
   }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
 }

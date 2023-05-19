@@ -21,6 +21,7 @@ public class App {
     calculateTotalWeight(ingredientArray);
     allergyWarning(Allergen.WHEAT);
     calculateTotalCalories(20, 20, 20);
+
   }
 
   public static void calculateTotalWeight(Ingredient[] ingredientArray) {
