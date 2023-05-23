@@ -1,20 +1,12 @@
 package com.joey.takehome;
 
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
-import javax.sound.sampled.SourceDataLine;
-import javax.swing.event.SwingPropertyChangeSupport;
-import javax.swing.text.StyleContext.SmallAttributeSet;
-
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.List;
-
-import com.joey.takehome.Sandwich;
 
 public class App {
   public static HashMap<Integer, Sandwich> menu = new HashMap<Integer, Sandwich>();

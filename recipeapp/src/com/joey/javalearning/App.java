@@ -1,7 +1,5 @@
 package com.joey.javalearning;
 
-// import java.lang.Enum;
-
 public class App {
   public static void main(String[] args) throws Exception {
     Ingredient ingredient1 = new Ingredient("flour", 500f);
