@@ -115,8 +115,22 @@
             // PriorityQueue - 
             // LinkedList/ArrayDeque - 
         // Map/SortMap - collection of pairs
-            // HashMap -  
-            // TreeMap - 
+            // HashMap -  do not mutate a key within a hashmap, make sure a hashcode always returns the same value, make sure it always continues to be equal to itself
+            // TreeMap - most methods are O(log(n)) which is very inefficient 
 
         // iterators can remove stuff, unlike foreach which can't modify the collection 
         // Collections.sort - defined by a comparator
+
+        // Streams - aggregate operations over an entire collection at once, alternative to iteratorating (foreach, loops) over collections
+        // can just call a collectionObject.stream() to start a stream which has many methods
+        // Filter - remove elements from the Stream that dont match a predicate (function that takes an element within a stream and returns true or false on if we want to retain it)
+        // Map - transform elements from one value into another
+        // Match - terminal operation (returns true/false)
+        // skip - discard next N elements, used in pagination
+        // limit - only keep N elements, used in pagination
+        // Sorted - .sorted() - sort comparable objects with default order
+        // FlatMap - transform elemenets from one value into zero, one or many values
+        // Reduce - combine elements together using a combing functions
+        // collectors let you store the results of your stream
+
+Operation on Streams - 3 minutes
