@@ -39,6 +39,14 @@ public class App {
         new String[] { "beef", "parmesan cheese", "mozzarella cheese", "olive oil", "marinara sauce" });
     Sandwich sandwich6 = new Sandwich("Egg Salad", 10.15, 1100, false, new Date(1751601600L),
         new String[] { "eggs", "mayo", "mustard", "green onion", "celery", "dill" });
+    Sandwich sandwich7 = new Sandwich("Ruben", 12.50, 855, false, new Date(1685851200),
+        new String[] { "corned beef", "swiss cheese", "sauerkraut", "Thousand Island dressing" });
+    Sandwich sandwich8 = new Sandwich("Turkey Club", 11.25, 795, false, new Date(0L),
+        new String[] { "turkey", "bacon", "lettuce", "cheddar cheese", "tomato", "pickles", "mayo" });
+    Sandwich sandwich9 = new Sandwich("Cuban", 10.50, 750, false, new Date(1703998800L),
+        new String[] { "ham", "roast pork", "swiss cheese", "pickles", "mustard" });
+    Sandwich sandwich10 = new Sandwich("Veggie", 9.25, 615, true, new Date(0L), new String[] { "cucumber", "tomato",
+        "spinach", "lettuce", "bell pepper", "carrots", "sprouts", "guacamole", "hummus" });
 
     menu.put(1, sandwich1);
     menu.put(2, sandwich2);
@@ -46,6 +54,10 @@ public class App {
     menu.put(4, sandwich4);
     menu.put(5, sandwich5);
     menu.put(6, sandwich6);
+    menu.put(7, sandwich7);
+    menu.put(8, sandwich8);
+    menu.put(9, sandwich9);
+    menu.put(10, sandwich10);
 
     System.out.println("Menu:");
     menu.values().forEach(
