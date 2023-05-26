@@ -3,15 +3,12 @@ package com.joey.takehome;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import java.util.Map;
-import java.util.Map.Entry;
-
 public class App {
-  public static HashMap<Integer, Sandwich> menu = new HashMap<Integer, Sandwich>();
+  // public static HashMap<Integer, Sandwich> menu = new HashMap<Integer,
+  // Sandwich>();
   public static List<Sandwich> menu1 = new ArrayList<Sandwich>();
 
   public static void main(String[] args) {
@@ -63,67 +60,91 @@ public class App {
     menu1.add(9, sandwich10);
 
     System.out.println("Menu:");
-    menu.values().forEach(
+    menu1.forEach(
         sandwich -> System.out.println(
-            ("name: " + sandwich.name + "\n" + "cost: " + sandwich.cost + "\n" + "calories: " + sandwich.calories
+            ("name: " + sandwich.getName() + "\n" + "cost: " + sandwich.getCost() + "\n" + "calories: "
+                + sandwich.getCalories()
                 + "\n" + "ingredients: "
                 + Arrays.toString(sandwich.getIngredientsArray()).replaceAll("[\\[\\]]", ""))));
   }
 
-  public static Order createOrder(int menuNumber, String customerName) {
-    Order order = new Order(customerName, menu.get(menuNumber).cost);
+  public static Order createOrder(int menuNumber, String customerName) throws NullPointerException {
+    try {
+      Order order = new Order(customerName, menu1.get(menuNumber - 1).cost);
 
-    System.out.println("Order");
-    System.out.println("Name: " + order.getCustomerName() + " \nTotal: $" + String.format("%.2f", order.getTotal()));
-    return order;
+      System.out.println("Order");
+      System.out.println("Name: " + order.getCustomerName() + " \nTotal: $" + String.format("%.2f", order.getTotal()));
+      return order;
+
+    } catch (NullPointerException e) {
+      throw new NullPointerException("Must enter a valid argument");
+    }
   }
 
-  public static Order createGroupOrder(int[] orderedSandwiches, String customerName, boolean groupOrder) {
-    double totalCost = 0;
+  public static Order createGroupOrder(int[] orderedSandwiches, String customerName, boolean groupOrder)
+      throws NullPointerException {
+    try {
+      double totalCost = 0;
 
-    if (groupOrder) {
-      for (int menuItem : orderedSandwiches) {
-        totalCost += menu.get(menuItem).getCost();
+      if (groupOrder) {
+        for (int menuItem : orderedSandwiches) {
+          totalCost += menu1.get(menuItem).getCost();
+        }
       }
+
+      Order order = new Order(customerName, totalCost);
+
+      System.out.println("Group Order");
+      System.out.println("Name: " + order.getCustomerName() + " \nTotal: $" + String.format("%.2f", order.getTotal()));
+      return order;
+    } catch (NullPointerException e) {
+      throw new NullPointerException("Must enter a valid argument");
+    }
+  }
+
+  public static List<Sandwich> glutenFreeOption() throws NullPointerException {
+    try {
+      List<Sandwich> glutenFreeSandwiches = menu1.stream()
+          .filter(sandwich -> sandwich.isGlutenFree == true)
+          .collect(Collectors.toList());
+
+      System.out.println("Gluten Free Options:");
+      glutenFreeSandwiches.forEach(v -> System.out.println(v.name));
+
+      return glutenFreeSandwiches;
+    } catch (NullPointerException e) {
+      throw new NullPointerException("No gluten free options =/");
     }
 
-    Order order = new Order(customerName, totalCost);
-
-    System.out.println("Group Order");
-    System.out.println("Name: " + order.getCustomerName() + " \nTotal: $" + String.format("%.2f", order.getTotal()));
-    return order;
   }
 
-  public static Map<Integer, Sandwich> glutenFreeOption() {
-    Map<Integer, Sandwich> glutenFreeSandwiches = menu.entrySet().stream()
-        .filter(sandwich -> sandwich.getValue().isGlutenFree == true)
-        .collect(Collectors.toMap(Entry::getKey, Entry::getValue));
+  public static List<Sandwich> healthyOption(int calories) throws NullPointerException {
+    try {
+      List<Sandwich> healthySandwiches = menu1.stream()
+          .filter(sandwich -> sandwich.getCalories() < calories)
+          .collect(Collectors.toList());
 
-    System.out.println("Gluten Free Options:");
-    glutenFreeSandwiches.values().forEach(v -> System.out.println(v.name));
+      System.out.println("Healthy Options:");
+      healthySandwiches.forEach(v -> System.out.println(v.name));
 
-    return glutenFreeSandwiches;
+      return healthySandwiches;
+    } catch (NullPointerException e) {
+      throw new NullPointerException("No healthy sammiches =/");
+    }
   }
 
-  public static Map<Integer, Sandwich> healthyOption(int calories) {
-    Map<Integer, Sandwich> healthySandwiches = menu.entrySet().stream()
-        .filter(sandwich -> sandwich.getValue().calories < calories)
-        .collect(Collectors.toMap(Entry::getKey, Entry::getValue));
+  public static List<Sandwich> allergyCheck(String ingredient) throws NullPointerException {
+    try {
+      List<Sandwich> allergenFreeSandwiches = menu1.stream()
+          .filter(sandwich -> Arrays.asList(sandwich.getIngredientsArray()).contains(ingredient) == false)
+          .collect(Collectors.toList());
 
-    System.out.println("Healthy Options:");
-    healthySandwiches.values().forEach(v -> System.out.println(v.name));
+      System.out.println("Allergen Free Options:");
+      allergenFreeSandwiches.forEach(v -> System.out.println(v.name));
 
-    return healthySandwiches;
-  }
-
-  public static Map<Integer, Sandwich> allergyCheck(String ingredient) {
-    Map<Integer, Sandwich> allergenFreeSandwiches = menu.entrySet().stream()
-        .filter(sandwich -> Arrays.asList(sandwich.getValue().getIngredientsArray()).contains(ingredient) == false)
-        .collect(Collectors.toMap(Entry::getKey, Entry::getValue));
-
-    System.out.println("Allergen Free Options:");
-    allergenFreeSandwiches.values().forEach(v -> System.out.println(v.name));
-
-    return allergenFreeSandwiches;
+      return allergenFreeSandwiches;
+    } catch (NullPointerException e) {
+      throw new NullPointerException("Don't eat here, too many allergens...");
+    }
   }
 }
