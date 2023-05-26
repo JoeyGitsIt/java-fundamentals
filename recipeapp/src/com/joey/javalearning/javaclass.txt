@@ -88,7 +88,7 @@
 
         // Wrapper class - has methods that makes things easier when working with that type. Wrapper classes only holds a reference, not like a primitive which directly stores the value
         // Boxing converts primitive to a wrapper class
-        // Uboxing converts wrapper class to a primitive type 
+        // Unboxing converts wrapper class to a primitive type 
 
         // enums are cool
         // enums values are ordered. first value is the lowest and last value is highest

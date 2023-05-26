@@ -1,8 +1,10 @@
 package com.joey.takehome;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import java.util.Map;
@@ -10,6 +12,7 @@ import java.util.Map.Entry;
 
 public class App {
   public static HashMap<Integer, Sandwich> menu = new HashMap<Integer, Sandwich>();
+  public static List<Sandwich> menu1 = new ArrayList<Sandwich>();
 
   public static void main(String[] args) {
     createMenu();
@@ -48,16 +51,16 @@ public class App {
     Sandwich sandwich10 = new Sandwich("Veggie", 9.25, 615, true, new Date(0L), new String[] { "cucumber", "tomato",
         "spinach", "lettuce", "bell pepper", "carrots", "sprouts", "guacamole", "hummus" });
 
-    menu.put(1, sandwich1);
-    menu.put(2, sandwich2);
-    menu.put(3, sandwich3);
-    menu.put(4, sandwich4);
-    menu.put(5, sandwich5);
-    menu.put(6, sandwich6);
-    menu.put(7, sandwich7);
-    menu.put(8, sandwich8);
-    menu.put(9, sandwich9);
-    menu.put(10, sandwich10);
+    menu1.add(0, sandwich1);
+    menu1.add(1, sandwich2);
+    menu1.add(2, sandwich3);
+    menu1.add(3, sandwich4);
+    menu1.add(4, sandwich5);
+    menu1.add(5, sandwich6);
+    menu1.add(6, sandwich7);
+    menu1.add(7, sandwich8);
+    menu1.add(8, sandwich9);
+    menu1.add(9, sandwich10);
 
     System.out.println("Menu:");
     menu.values().forEach(
