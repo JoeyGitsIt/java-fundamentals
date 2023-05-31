@@ -1,5 +1,6 @@
 package com.joey.takehome;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Sandwich {
@@ -11,8 +12,9 @@ public class Sandwich {
   Date availabilityDate;
   String[] ingredientsArray;
 
-  public Sandwich(String name, double cost, int calories, boolean isGlutenFree, Date availabilityDate,
+  public Sandwich(int sandwichId, String name, double cost, int calories, boolean isGlutenFree, Date availabilityDate,
       String[] ingredientsArray) {
+    this.sandwichId = sandwichId;
     this.name = name;
     this.cost = cost;
     this.calories = calories;
@@ -75,5 +77,12 @@ public class Sandwich {
 
   public void setIngredientsArray(String[] ingredientsArray) {
     this.ingredientsArray = ingredientsArray;
+  }
+
+  @Override
+  public String toString() {
+    return "Sandwich [sandwichId=" + sandwichId + ", name=" + name + ", cost=" + cost + ", calories=" + calories
+        + ", isGlutenFree=" + isGlutenFree + ", availabilityDate=" + availabilityDate + ", ingredientsArray="
+        + Arrays.toString(ingredientsArray) + "]";
   }
 }
